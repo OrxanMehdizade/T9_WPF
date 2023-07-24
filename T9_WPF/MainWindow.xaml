@@ -5,65 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:T9_WPF"
         mc:Ignorable="d"
-        Title="T9" Height="950" Width="480">
-    <Window.Resources>
-        <Style x:Key="numbersbtnstyle" TargetType="Button">
-            <Setter Property="Height" Value="65"></Setter>
-            <Setter Property="Width" Value="120"></Setter>
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="BorderThickness" Value="0"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
-        </Style>
-        <Style x:Key="arrowsbtnstyle" TargetType="Button">
-            <Setter Property="Height" Value="50"></Setter>
-            <Setter Property="Width" Value="50"></Setter>
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="BorderThickness" Value="0"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
-        </Style>
-        <Style x:Key="bottombtnstyle" TargetType="Button">
-            <Setter Property="Height" Value="50"></Setter>
-            <Setter Property="Width" Value="50"></Setter>
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="BorderThickness" Value="0"></Setter>
-            <Setter Property="FontSize" Value="12"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
-        </Style>
+        Title="T9" Height="850" Width="480">
 
-        <Style x:Key="CAddbtnstyle" TargetType="Button">
-            <Setter Property="Height" Value="40"></Setter>
-            <Setter Property="Width" Value="90"></Setter>
-            <Setter Property="Background" Value="Black"></Setter>
-            <Setter Property="BorderThickness" Value="0"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
-        </Style>
-
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"></RowDefinition>
-            <RowDefinition Height="0.43*"></RowDefinition>
+            <RowDefinition Height="0.75*"></RowDefinition>
+            <RowDefinition Height="0.68*"></RowDefinition>
             <RowDefinition></RowDefinition>
-
-
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="0"></TextBox>
+
+        <TextBox Grid.Row="0" x:Name="txtInput"></TextBox>
 
         <StackPanel Grid.Row="1">
-            <Button x:Name="toparrow"     Style="{DynamicResource arrowsbtnstyle}" Margin="0,16,0,0"></Button>
-            <Button x:Name="leftarrow"    Style="{DynamicResource arrowsbtnstyle}"  Margin="-212,18,-26,7" ></Button>
-            <Button x:Name="bottomarrow"  Style="{DynamicResource bottombtnstyle}" Margin="0,7,0,0"></Button>
-            <Button x:Name="Ok"           Style="{DynamicResource arrowsbtnstyle}" Margin="0,-181,0,0">OK</Button>
-            <Button x:Name="rightarrow"   Style="{DynamicResource arrowsbtnstyle}" Margin="180,-180,0,0"></Button>
-            <Button x:Name="C"     Style="{DynamicResource CAddbtnstyle }"  Margin="0,-47,371,0">C</Button>
-            <Button x:Name="Add"   Style="{DynamicResource CAddbtnstyle }" Margin="371,-43,0,0">Add</Button>
-
+            <Button x:Name="toparrow"     FontSize="20" BorderThickness="0"  Width="50" Height="50" Margin="0,16,0,0"></Button>
+            <Button x:Name="leftarrow"    FontSize="20" BorderThickness="0"  Width="50" Height="50"  Margin="-212,18,-26,7" ></Button>
+            <Button x:Name="bottomarrow"  FontSize="12" BorderThickness="0"  Width="50" Height="50" Margin="0,7,0,0"></Button>
+            <Button x:Name="Ok"           FontSize="12" BorderThickness="0"  Width="50" Height="50" Margin="0,-181,0,0" >OK</Button>
+            <Button x:Name="rightarrow"   FontSize="20" BorderThickness="0"  Width="50" Height="50" Margin="180,-180,0,0"></Button>
+            <Button x:Name="C"     FontSize="20" BorderThickness="0"  Width="90" Height="40"  Margin="0,-47,371,0" Click="C_Click">C</Button>
+            <Button x:Name="Add"   FontSize="20" BorderThickness="0"  Width="90" Height="40" Margin="371,-43,0,0">Add</Button>
         </StackPanel>
-
-
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -78,21 +39,21 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" x:Name="one" Style="{DynamicResource numbersbtnstyle}" Margin="35,10,10,10" Click="one_Click" ></Button>
-            <Button Grid.Row="0" Grid.Column="1" x:Name="two" Style="{DynamicResource numbersbtnstyle}" Margin="10" ></Button>
-            <Button Grid.Row="0" Grid.Column="2" x:Name="three" Style="{DynamicResource numbersbtnstyle}" Margin="10" ></Button>
+            <Button Grid.Row="0" Grid.Column="0" x:Name="one"   FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="35,10,10,10"  ></Button>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="two"   FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="10" ></Button>
+            <Button Grid.Row="0" Grid.Column="2" x:Name="three" FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="10" ></Button>
 
-            <Button Grid.Row="1" Grid.Column="0" x:Name="four" Style="{DynamicResource numbersbtnstyle}" Margin="35,10,10,10"></Button>
-            <Button Grid.Row="1" Grid.Column="1" x:Name="five" Style="{DynamicResource numbersbtnstyle}" Margin="10"></Button>
-            <Button Grid.Row="1" Grid.Column="2" x:Name="six" Style="{DynamicResource numbersbtnstyle}" Margin="10"></Button>
+            <Button Grid.Row="1" Grid.Column="0" x:Name="four" FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="35,10,10,10"></Button>
+            <Button Grid.Row="1" Grid.Column="1" x:Name="five" FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="10"></Button>
+            <Button Grid.Row="1" Grid.Column="2" x:Name="six"  FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="10"></Button>
 
-            <Button Grid.Row="2" Grid.Column="0" x:Name="seven" Style="{DynamicResource numbersbtnstyle}" Margin="35,10,10,10"></Button>
-            <Button Grid.Row="2" Grid.Column="1" x:Name="eight" Style="{DynamicResource numbersbtnstyle}" Margin="10" ></Button>
-            <Button Grid.Row="2" Grid.Column="2" x:Name="nine" Style="{DynamicResource  numbersbtnstyle}" Margin="10" ></Button>
+            <Button Grid.Row="2" Grid.Column="0" x:Name="seven" FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="35,10,10,10"></Button>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="eight" FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="10" ></Button>
+            <Button Grid.Row="2" Grid.Column="2" x:Name="nine"  FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" ></Button>
 
-            <Button Grid.Row="4" Grid.Column="0" x:Name="star" Style="{DynamicResource numbersbtnstyle}" Margin="35,10,10,10" >*</Button>
-            <Button Grid.Row="4" Grid.Column="1" x:Name="zero" Style="{DynamicResource numbersbtnstyle}"  Margin="10"   ></Button>
-            <Button Grid.Row="4" Grid.Column="2" x:Name="hash" Style="{DynamicResource numbersbtnstyle}" Margin="10" >#</Button>
+            <Button Grid.Row="4" Grid.Column="0" x:Name="star" FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="35,10,10,10" >*</Button>
+            <Button Grid.Row="4" Grid.Column="1" x:Name="zero" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10"   ></Button>
+            <Button Grid.Row="4" Grid.Column="2" x:Name="hash" FontSize="20" BorderThickness="0"  Width="120" Height="65" Margin="10" >#</Button>
         </Grid>
 
     </Grid>
