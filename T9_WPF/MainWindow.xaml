@@ -19,7 +19,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" x:Name="txtInput"></TextBox>
+            <TextBox Grid.Row="0" x:Name="txtInput" TextWrapping="Wrap" AcceptsReturn="True" ></TextBox>
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                 <StackPanel x:Name="suggestionsPanel" Orientation="Vertical" Margin="5"></StackPanel>
             </ScrollViewer>
@@ -28,11 +28,11 @@
 
 
         <StackPanel Grid.Row="1">
-            <Button x:Name="toparrow"     FontSize="20" BorderThickness="0"  Width="50" Height="50" Margin="0,16,0,0"></Button>
-            <Button x:Name="leftarrow"    FontSize="20" BorderThickness="0"  Width="50" Height="50"  Margin="-212,18,-26,7" ></Button>
-            <Button x:Name="bottomarrow"  FontSize="12" BorderThickness="0"  Width="50" Height="50" Margin="0,7,0,0"></Button>
-            <Button x:Name="Ok"           FontSize="12" BorderThickness="0"  Width="50" Height="50" Margin="0,-181,0,0" >OK</Button>
-            <Button x:Name="rightarrow"   FontSize="20" BorderThickness="0"  Width="50" Height="50" Margin="180,-180,0,0"></Button>
+            <Button x:Name="toparrow"     FontSize="20" BorderThickness="0"  Width="50" Height="50" Margin="0,16,0,0" Click="toparrow_Click" ></Button>
+            <Button x:Name="leftarrow"    FontSize="20" BorderThickness="0"  Width="50" Height="50"  Margin="-212,18,-26,7" Click="leftarrow_Click" ></Button>
+            <Button x:Name="bottomarrow"  FontSize="12" BorderThickness="0"  Width="50" Height="50" Margin="0,7,0,0" Click="bottomarrow_Click"></Button>
+
+            <Button x:Name="rightarrow"   FontSize="20" BorderThickness="0"  Width="50" Height="50" Margin="180,-180,0,0" Click="rightarrow_Click"></Button>
             <Button x:Name="C"     FontSize="20" BorderThickness="0"  Width="90" Height="40"  Margin="0,-47,371,0" Click="C_Click">C</Button>
             <Button x:Name="Add"   FontSize="20" BorderThickness="0"  Width="90" Height="40" Margin="371,-43,0,0" Click="Add_Click" >Add</Button>
         </StackPanel>
@@ -51,20 +51,20 @@
             </Grid.RowDefinitions>
 
             <Button Grid.Row="0" Grid.Column="0" x:Name="one"   FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="35,10,10,10"  ></Button>
-            <Button Grid.Row="0" Grid.Column="1" x:Name="two"   FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" ></Button>
-            <Button Grid.Row="0" Grid.Column="2" x:Name="three" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" ></Button>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="two"   FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" Click="two_Click" ></Button>
+            <Button Grid.Row="0" Grid.Column="2" x:Name="three" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" Click="three_Click" ></Button>
 
-            <Button Grid.Row="1" Grid.Column="0" x:Name="four" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="35,10,10,10"></Button>
-            <Button Grid.Row="1" Grid.Column="1" x:Name="five" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10"></Button>
-            <Button Grid.Row="1" Grid.Column="2" x:Name="six"  FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10"></Button>
+            <Button Grid.Row="1" Grid.Column="0" x:Name="four" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="35,10,10,10" Click="four_Click"></Button>
+            <Button Grid.Row="1" Grid.Column="1" x:Name="five" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" Click="five_Click"></Button>
+            <Button Grid.Row="1" Grid.Column="2" x:Name="six"  FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" Click="six_Click"></Button>
 
-            <Button Grid.Row="2" Grid.Column="0" x:Name="seven" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="35,10,10,10"></Button>
-            <Button Grid.Row="2" Grid.Column="1" x:Name="eight" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" ></Button>
-            <Button Grid.Row="2" Grid.Column="2" x:Name="nine"  FontSize="20" BorderThickness="0"  Width="120" Height="65"   Margin="10" ></Button>
+            <Button Grid.Row="2" Grid.Column="0" x:Name="seven" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="35,10,10,10" Click="seven_Click"></Button>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="eight" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" Click="eight_Click" ></Button>
+            <Button Grid.Row="2" Grid.Column="2" x:Name="nine"  FontSize="20" BorderThickness="0"  Width="120" Height="65"   Margin="10" Click="nine_Click" ></Button>
 
-            <Button Grid.Row="4" Grid.Column="0" x:Name="star" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="35,10,10,10" >*</Button>
-            <Button Grid.Row="4" Grid.Column="1" x:Name="zero" FontSize="20" BorderThickness="0"  Width="120" Height="65"   Margin="10"   ></Button>
-            <Button Grid.Row="4" Grid.Column="2" x:Name="hash" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" >#</Button>
+            <Button Grid.Row="4" Grid.Column="0" x:Name="star" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="35,10,10,10" Click="star_Click" >*</Button>
+            <Button Grid.Row="4" Grid.Column="1" x:Name="zero" FontSize="20" BorderThickness="0"  Width="120" Height="65"   Margin="10" Click="zero_Click"   ></Button>
+            <Button Grid.Row="4" Grid.Column="2" x:Name="hash" FontSize="20" BorderThickness="0"  Width="120" Height="65"  Margin="10" Click="hash_Click" >#</Button>
         </Grid>
 
 

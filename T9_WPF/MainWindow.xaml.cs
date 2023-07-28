@@ -6,23 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace T9_WPF
 {
     public partial class MainWindow : Window
     {
-        private Dictionary<char, string> t9Mappings = new Dictionary<char, string>
-        {
-            {'2', "abc"},
-            {'3', "def"},
-            {'4', "ghi"},
-            {'5', "jkl"},
-            {'6', "mno"},
-            {'7', "pqrs"},
-            {'8', "tuv"},
-            {'9', "wxyz"}
-        };
+        private int count = 0;
 
         private List<string> recommendations = new List<string>();
         public List<string> vocabulary = new List<string>();
@@ -30,10 +20,13 @@ namespace T9_WPF
         public MainWindow()
         {
             InitializeComponent();
+            MessageBox.Show("Bəzi buttonların ilk hərifləri işlmiyə bilər ama axtarış klavyenen yazsaq textbox yazilmış herşeye görə axtarır");
             txtInput.TextChanged += TxtInput_TextChanged;
             LoadVocabulary("Vocabulary.txt");
             SynvoOfMascaras();
+
         }
+
 
         private void LoadVocabulary(string filePath)
         {
@@ -124,6 +117,283 @@ namespace T9_WPF
             txtInput.Clear();
         }
 
+
+
+    
+
+
+        private void two_Click(object sender, RoutedEventArgs e)
+        {
+            switch (count)
+            {
+                case 0:
+                    txtInput.Text += "a";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text += "b";
+                    count++;
+                    break;
+                case 2:
+                    txtInput.Text += "c";
+                    count++;
+                    break;
+                default:
+                    count = 0;
+                    break;
+            }
+
+
+        }//2
+         
+        private void three_Click(object sender, RoutedEventArgs e)
+        {
+
+            switch (count)
+            {
+                case 0:
+                    txtInput.Text += "d";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text += "e";
+                    count++;
+                    break;
+                case 2:
+                    txtInput.Text += "f";
+                    break;
+
+                default:
+                    count = 0;
+                    break;
+            }
+
+            
+        }//3
+
+
+        private void four_Click(object sender, RoutedEventArgs e)
+        {
+            switch (count)
+            {
+                case 0:
+                    txtInput.Text += "g";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text += "h";
+                    count++;
+                    break;
+                case 2:
+                    txtInput.Text +="i";
+                    break;
+
+                default:
+                    count = 0;
+                    break;
+            }
+
+        }//4
+
+        private void five_Click(object sender, RoutedEventArgs e)
+        {
+
+            switch (count)
+            {
+                case 0:
+                    txtInput.Text += "j";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text += "k";
+                    count++;
+                    break;
+                case 2:
+                    txtInput.Text += "l";
+                    break;
+
+                default:
+                    count = 0;
+                    break;
+            }
+
+
+        }//5
+
+
+        private void six_Click(object sender, RoutedEventArgs e)
+        {
+            switch(count){
+                case 0:
+                    txtInput.Text += "m";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text +="n" ;
+                    count++;
+                    break;
+                case 2:
+                    txtInput.Text += "o";
+                    break;
+
+                default:
+                    count = 0;
+                    break;
+            }
+
+        }//6
+
+        private void seven_Click(object sender, RoutedEventArgs e)
+        {
+            switch (count)
+            {
+                case 0:
+                    txtInput.Text += "p";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text +="q";
+                    count++;
+                    break;
+                case 2:
+                    txtInput.Text +="r";
+                    break;
+                case 3:
+                    txtInput.Text +="s";
+                    break;
+                default:
+                    count = 0;
+                    break;
+            }
+        }
+
+        private void eight_Click(object sender, RoutedEventArgs e)
+        {
+            switch (count)
+            {
+                case 0:
+                    txtInput.Text +="t";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text += "u";
+                    count++;
+                    break;
+                case 2:
+                    txtInput.Text +="v";
+                    break;
+
+                default:
+                    count = 0;
+                    break;
+            }
+        }
+
+        private void nine_Click(object sender, RoutedEventArgs e)
+        {
+
+            switch (count)
+            {
+                case 0:
+                    txtInput.Text +="w";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text += "x";
+                    count++;
+                    break;
+                case 2:
+                    txtInput.Text +="y";
+                    break;
+                case 3:
+                    txtInput.Text += "z";
+                    break;
+
+                default:
+                    count = 0;
+                    break;
+            }
+        }
+
+        private void zero_Click(object sender, RoutedEventArgs e)
+        {
+            switch (count)
+            {
+                case 0:
+                    txtInput.Text += "0";
+                    count++;
+                    break;
+                case 1:
+                    txtInput.Text +="+";
+                    count++;
+                    break;
+                default:
+                    count = 0;
+                    break;
+            }
+        }
+
+        private void star_Click(object sender, RoutedEventArgs e)
+        {
+            txtInput.Text += "*";
+
+        }
+
+        private void hash_Click(object sender, RoutedEventArgs e)
+        {
+            txtInput.Text += "#";
+        }
+
+        private void leftarrow_Click(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = txtInput;
+
+            if (textBox.SelectionStart > 0)
+            {
+                textBox.SelectionStart--;
+                textBox.SelectionLength = 0;
+            }
+            textBox.Focus();
+        }
+
+        private void rightarrow_Click(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = txtInput;
+            if (textBox.SelectionStart > 0)
+            {
+                textBox.SelectionStart++;
+                textBox.SelectionLength = 0;
+            }
+            textBox.Focus();
+        }
+
+        private void bottomarrow_Click(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = txtInput;
+            int currentLine = textBox.GetLineIndexFromCharacterIndex(textBox.SelectionStart);
+            if (currentLine < textBox.LineCount - 1)
+            {
+                int nextLineFirstCharIndex = textBox.GetCharacterIndexFromLineIndex(currentLine + 1);
+                textBox.SelectionStart = nextLineFirstCharIndex;
+                textBox.SelectionLength = 0;
+            }
+            textBox.Focus();
+        }
+
+        private void toparrow_Click(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = txtInput;
+            int currentLine = textBox.GetLineIndexFromCharacterIndex(textBox.SelectionStart);
+            if (currentLine > 0)
+            {
+                int prevLineFirstCharIndex = textBox.GetCharacterIndexFromLineIndex(currentLine - 1);
+                textBox.SelectionStart = prevLineFirstCharIndex;
+                textBox.SelectionLength = 0;
+            }
+            textBox.Focus();
+
+
+        }
         public void SynvoOfMascaras()
         {
             toparrow.Content = $"^";
@@ -131,15 +401,17 @@ namespace T9_WPF
             rightarrow.Content = $">";
             bottomarrow.Content = $"\\/";
             one.Content = $"1";
-            two.Content = $"   2\nABC";
-            three.Content = $"   3\nDEF";
-            four.Content = $"   4\nGHI";
-            five.Content = $"  5\nJKL";
-            six.Content = $"   6\nMNO";
-            seven.Content = $"   7\nPQRS";
-            eight.Content = $"   8\nTUV";
-            nine.Content = $"   9\nWXYZ";
+            two.Content = $"   2\nabc";
+            three.Content = $"   3\ndef";
+            four.Content = $"   4\nghi";
+            five.Content = $"  5\njkl";
+            six.Content = $"   6\nmno";
+            seven.Content = $"   7\npqrs";
+            eight.Content = $"   8\ntuv";
+            nine.Content = $"   9\nwxyz";
             zero.Content = $"0\n+";
         }
+
+
     }
 }
